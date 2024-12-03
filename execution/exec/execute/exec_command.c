@@ -57,6 +57,7 @@ void	execs(t_cmd *token, int btn, t_mini *env)
 		g_var->en = separate_env(env->env);
 		if (execve(token->cmd_path, token->arguments, g_var->en) == -1)
 		{
+			free(g_var->en);
 			ft_putstr_fd("minishell: ", 2);
 			ft_putstr_fd("\n", 2);
 			exit(1);
