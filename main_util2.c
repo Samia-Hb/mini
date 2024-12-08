@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_util2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szeroual <szeroual@student.42.fr>          #+#  +:+       +#+        */
+/*   By: szeroual <szeroual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-11-20 22:30:12 by szeroual          #+#    #+#             */
-/*   Updated: 2024-11-20 22:30:12 by szeroual         ###   ########.fr       */
+/*   Created: 2024/11/20 22:30:12 by szeroual          #+#    #+#             */
+/*   Updated: 2024/12/08 15:56:35 by szeroual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ t_shell	*init_shell(void)
 t_envi	*create__node(char *name, char *value)
 {
 	t_envi	*new_node;
-
+	(void)value;
 	new_node = malloc(sizeof(t_envi));
 	if (!new_node)
 	{
 		perror("malloc");
 		exit(EXIT_FAILURE);
 	}
-	new_node->name = strdup(name);
+	new_node->name = ft_strdup(name);
 	new_node->vale = strdup(value);
 	if (!new_node->name || !new_node->vale)
 	{
