@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:39:34 by shebaz            #+#    #+#             */
-/*   Updated: 2024/12/07 11:02:15 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/12/07 14:26:52 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,15 @@ void	ft_free_envp(t_envi *envp)
 	{
 		next = current->next;
 		if (current->name)
+		{
 			free(current->name);
+			current->name = NULL;
+		}
 		if (current->vale)
+		{
 			free(current->vale);
+			current->vale = NULL;
+		}
 		free(current);
 		current = next;
 	}
@@ -75,16 +81,17 @@ void	clean_gc(void)
 		return ;
 	if (g_var->en)
 		ft_free_array(g_var->en);
-	if (g_var->envp)
-		ft_free_envp(g_var->envp);
 	current = g_var->head;
-	while (current)
-	{
-		next = current->next;
-		if (current->ptr)
-			free(current->ptr);
-		free(current);
-		current = next;
+	if(current)
+	{		
+		while (current)
+		{
+			next = current->next;
+			if (current->ptr)
+				free(current->ptr);
+			free(current);
+			current = next;
+		}
 	}
 	free(g_var);
 	g_var = NULL;

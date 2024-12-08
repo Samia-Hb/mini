@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:09:51 by szeroual          #+#    #+#             */
-/*   Updated: 2024/12/05 13:07:24 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/12/07 13:45:27 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,6 @@ static int	separate_string(char const *s, char c)
 	}
 	return (wc);
 }
-
-// static int	ft_free(char **ptr, int size)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		free(ptr[i]);
-// 		i++;
-// 	}
-// 	free(ptr);
-// 	return (0);
-// }
 
 static void	str_cpy(char *d, const char *src, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 00:06:05 by shebaz            #+#    #+#             */
-/*   Updated: 2024/12/07 11:56:50 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/12/07 13:28:42 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,7 +240,7 @@ t_envi							*search_env(t_envi *envi, char *name);
 int								is_n_option(char *arg);
 int								first_non_option(char **args);
 int								ft_echo(char **args);
-int								ft_pwd(char **args, t_envi *env);
+int								ft_pwd(char **args);
 void							ft_exit(char **av);
 int								ft_env(t_envi *env);
 void							add_env_variable(t_envi **env, char *name,
@@ -312,4 +312,5 @@ int								ft_export(char **ptr, t_envi **env);
 char							**separate_env(t_envi *env);
 void							parent_process(void);
 void							close_file_descriptors(void);
+void	ft_free_envp(t_envi *envp);
 #endif

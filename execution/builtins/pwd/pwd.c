@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szeroual <szeroual@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:00:56 by shebaz            #+#    #+#             */
-/*   Updated: 2024/12/05 23:43:26 by szeroual         ###   ########.fr       */
+/*   Updated: 2024/12/07 13:27:56 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../minishell.h"
 
-int	ft_pwd(char **args, t_envi *env)
+int	ft_pwd(char **args)
 {
 	char	buff[1024];
 	char	*pwd;
@@ -28,11 +28,10 @@ int	ft_pwd(char **args, t_envi *env)
 	}
 	write(1, pwd, ft_strlen(pwd));
 	write(1, "\n", 1);
-	if (env)
+	if (g_var->envp)
 	{
-		free(env->vale);
-		env->vale = ft_strdup(pwd);
-		if (!env->vale)
+		g_var->envp->vale = ft_strdup(pwd);
+		if (!g_var->envp->vale)
 		{
 			perror("Failed to duplicate pwd");
 			return (1);

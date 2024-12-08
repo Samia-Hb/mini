@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 00:12:31 by shebaz            #+#    #+#             */
-/*   Updated: 2024/12/05 19:05:31 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/12/07 14:42:34 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_envi	*init_env(char **en)
 	i = 0;
 	while (en[i])
 	{
-		env_entry = strdup(en[i]);
+		env_entry = ft_strdup(en[i]);
 		if (!env_entry)
 			error_strdup();
 		process_env_entry(env_entry, &env_list);
