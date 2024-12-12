@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 22:29:05 by szeroual          #+#    #+#             */
-/*   Updated: 2024/12/09 16:31:00 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/12/11 20:25:39 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ void	shell_loop(t_envi *envp)
 			break ;
 		}
 		handle_input(input, envp);
+		// clean_gc();
 	}
 }
